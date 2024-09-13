@@ -24,12 +24,21 @@ python -m unittest tests.test_ex_03
 - Be careful with large inputs to avoid reaching Python's maximum recursion depth.
 
 ## Notes
-- Do not remove or rename `calculate_factorial()`, it's required and should not be altered.
+- Do not remove or rename `calculate_factorial()`, it's required and should not be altered.-
 - You can create your own helper functions if needed.
 - Make sure your implementation can handle large inputs efficiently.
 """
 
 
 def calculate_factorial(n):
-    # TODO: Implement the function to calculate factorial of n
-    pass
+    result = 1
+    if not isinstance(n,int):
+        raise ValueError
+    elif isinstance(n,bool):
+        raise ValueError
+    elif n < 0:
+        raise ValueError
+    for i in range(1,n+1):
+        result = result * i
+    return result
+    

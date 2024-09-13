@@ -36,6 +36,11 @@ python -m unittest tests.test_ex_04
 
 
 def get_squares(n):
-    # Implement the function to return dictionary containing squares of numbers
-    # from 0 to n (both included)
-    pass
+    result = {}
+    if not isinstance(n,int):
+        raise ValueError
+    elif n < 1:
+        raise ValueError
+    for i in range(1,n+1):
+        result[i] = i*i
+    return result
